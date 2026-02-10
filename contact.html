@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | Shenandoah Heritage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">Shenandoah Heritage Homeschool Collective</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Programs</a></li>
+        <li><a href="contact.html" class="cta">Join Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="container section contact-page">
+  <h2>Contact Us</h2>
+  <p>We'd love to hear from you.</p>
+
+  <div class="contact-grid">
+    <div class="contact-info">
+      <p><strong>Call Us:</strong> +1 (302) 765-7778</p>
+      <p><strong>Email:</strong>shhomeschoolcollective@gmail.com</p>
+      <p><strong>Hours:</strong> Mon - Fri: 9am – 5pm</p>
+    </div>
+
+    <form>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="text" placeholder="Phone Number">
+      <textarea rows="4" placeholder="Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+</section>
+
+<footer>
+  <p>&copy; 2026 Shenandoah Heritage Homeschool Collective</p>
+</footer>
+<style>
+@media (max-width: 768px) {
+
+  nav {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+</style>
+</body>
+</html>
