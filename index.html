@@ -44,7 +44,15 @@
     }
 
     .toggle-button:hover { background: #e0e0e0; }
-    .toggle-content { display: none; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background: #fafafa; margin-bottom: 20px; }
+
+    .toggle-content {
+      display: none;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fafafa;
+      margin-bottom: 20px;
+    }
 
     /* Original styles preserved */
     .our-story h3 { margin-top: 0; font-size: 1.4rem; }
@@ -95,20 +103,48 @@
 <section class="container section about-us">
 
   <div class="toggle-buttons-container">
-    <button class="toggle-button" onclick="toggleContent(this)">About Us</button>
-    <button class="toggle-button" onclick="toggleContent(this)">Our Story</button>
-    <button class="toggle-button" onclick="toggleContent(this)">Mission</button>
-    <button class="toggle-button" onclick="toggleContent(this)">Vision</button>
-    <button class="toggle-button" onclick="toggleContent(this)">Goals</button>
-    <button class="toggle-button" onclick="toggleContent(this)">Values</button>
+    <button class="toggle-button" data-target="about">About Us</button>
+    <button class="toggle-button" data-target="story">Our Story</button>
+    <button class="toggle-button" data-target="mission">Mission</button>
+    <button class="toggle-button" data-target="vision">Vision</button>
+    <button class="toggle-button" data-target="goals">Goals</button>
+    <button class="toggle-button" data-target="values">Values</button>
   </div>
 
-  <div class="toggle-content">
+  <div id="about" class="toggle-content">
     <p>The Shenandoah Heritage Homeschool Collective is a dedicated educational initiative focused on celebrating and preserving the rich cultural heritage of Black and Brown Americans. Our program is designed to provide a nurturing and inclusive learning environment where students can explore their roots, embrace their identities, and develop a strong sense of pride and belonging. We offer a diverse curriculum that integrates cultural exploration with academic excellence, featuring activities such as cultural workshops, heritage celebrations, and community service projects. Our mission is to empower students with the knowledge and confidence to thrive in an ever-changing world, fostering leaders who are proud of their heritage and equipped to make meaningful contributions to society. At the heart of our collective is a commitment to inclusivity, empowerment, and pride, creating a vibrant community where every student is inspired to reach their full potential.</p>
   </div>
 
-  <div class="toggle-content">
+  <div id="story" class="toggle-content">
     <p>The Shenandoah Heritage Homeschool Collective emerged from a profound passion for education and a deep appreciation for the vibrant cultural tapestry of Black and Brown Americans. It was founded in response to a crucial realization: as African Americans, we are navigating an era of identity crisis, where the struggle to understand, embrace, and preserve our identity is more pressing than ever. Our initiative is a call to action—a commitment to rediscovering and celebrating who we are. It is about empowering our community to confidently own our identity and enter every room with the assurance that we belong and have rightfully earned our place. Through education and cultural enrichment, we strive to instill in our students the confidence and conviction to navigate the world with pride and resilience.</p>
+  </div>
+
+  <div id="mission" class="toggle-content">
+    <p>At Shenandoah Heritage Homeschool Collective, we are committed to delivering an enriching home education experience that centers on the roots and heritage of Black and Brown Americans. Our mission is to cultivate a deep understanding and appreciation of cultural history, empowering our students with a strong sense of pride, identity, and belonging. Through a diverse and inclusive curriculum, we aim to inspire lifelong learning and community engagement, fostering leaders who celebrate and contribute to the rich tapestry of our shared heritage.</p>
+  </div>
+
+  <div id="vision" class="toggle-content">
+    <p>Our vision is to be a beacon of cultural education and empowerment, where every student is inspired to explore and embrace their heritage. We envision a future where our collective efforts create a vibrant community of learners who are proud of their roots and equipped to make meaningful contributions to society. By preserving and promoting the history and achievements of Black and Brown Americans, we strive to build a more inclusive and understanding world for generations to come.</p>
+  </div>
+
+  <div id="goals" class="toggle-content">
+    <ol>
+      <li>Cultural Education: Provide an enriching educational experience that emphasizes the history, culture, and contributions of Black and Brown Americans.</li>
+      <li>Empowerment Through Knowledge: Equip students with the knowledge and skills needed to understand and appreciate their cultural identity and heritage.</li>
+      <li>Community Engagement: Foster a strong sense of community and collaboration among students, parents, and educators to enhance learning and cultural appreciation.</li>
+      <li>Holistic Development: Support the overall development of students by integrating academic, social, and emotional learning with cultural education.</li>
+      <li>Leadership and Advocacy: Cultivate future leaders who are confident in their identity and motivated to make positive contributions to society.</li>
+    </ol>
+  </div>
+
+  <div id="values" class="toggle-content">
+    <ol>
+      <li>Inclusivity: Create an inclusive learning environment that respects and celebrates diversity in all its forms.</li>
+      <li>Respect for Heritage: Honor and preserve the rich cultural heritage of Black and Brown communities through education and storytelling.</li>
+      <li>Lifelong Learning: Instill a love for lifelong learning and curiosity about the world and its diverse cultures.</li>
+      <li>Empathy and Understanding: Encourage empathy, understanding, and respect for different perspectives and experiences.</li>
+      <li>Collaboration: Promote collaboration and mutual support among students, parents, and educators to build a strong, united community.</li>
+    </ol>
   </div>
 
   <div class="about-icons">
@@ -134,37 +170,8 @@
       </div>
     </div>
   </div>
-
-  <div class="toggle-content">
-    <p>At Shenandoah Heritage Homeschool Collective, we are committed to delivering an enriching home education experience that centers on the roots and heritage of Black and Brown Americans. Our mission is to cultivate a deep understanding and appreciation of cultural history, empowering our students with a strong sense of pride, identity, and belonging. Through a diverse and inclusive curriculum, we aim to inspire lifelong learning and community engagement, fostering leaders who celebrate and contribute to the rich tapestry of our shared heritage.</p>
-  </div>
-
-  <div class="toggle-content">
-    <p>Our vision is to be a beacon of cultural education and empowerment, where every student is inspired to explore and embrace their heritage. We envision a future where our collective efforts create a vibrant community of learners who are proud of their roots and equipped to make meaningful contributions to society. By preserving and promoting the history and achievements of Black and Brown Americans, we strive to build a more inclusive and understanding world for generations to come.</p>
-  </div>
-
-  <div class="toggle-content">
-    <ol>
-      <li>Cultural Education: Provide an enriching educational experience that emphasizes the history, culture, and contributions of Black and Brown Americans.</li>
-      <li>Empowerment Through Knowledge: Equip students with the knowledge and skills needed to understand and appreciate their cultural identity and heritage.</li>
-      <li>Community Engagement: Foster a strong sense of community and collaboration among students, parents, and educators to enhance learning and cultural appreciation.</li>
-      <li>Holistic Development: Support the overall development of students by integrating academic, social, and emotional learning with cultural education.</li>
-      <li>Leadership and Advocacy: Cultivate future leaders who are confident in their identity and motivated to make positive contributions to society.</li>
-    </ol>
-  </div>
-
-  <div class="toggle-content">
-    <ol>
-      <li>Inclusivity: Create an inclusive learning environment that respects and celebrates diversity in all its forms.</li>
-      <li>Respect for Heritage: Honor and preserve the rich cultural heritage of Black and Brown communities through education and storytelling.</li>
-      <li>Lifelong Learning: Instill a love for lifelong learning and curiosity about the world and its diverse cultures.</li>
-      <li>Empathy and Understanding: Encourage empathy, understanding, and respect for different perspectives and experiences.</li>
-      <li>Collaboration: Promote collaboration and mutual support among students, parents, and educators to build a strong, united community.</li>
-    </ol>
-  </div>
 </section>
 
-<!-- Services, Recent Work, Contact CTA, Footer sections remain unchanged -->
 <section class="container section services-home">
   <h2>Our Services</h2>
   <div class="service-cards">
@@ -213,8 +220,23 @@
 </footer>
 
 <script>
+  // Toggle horizontal section content
+  const buttons = document.querySelectorAll('.toggle-button');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+      const content = document.getElementById(targetId);
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  });
+
+  // Existing icon box toggle
   function toggleContent(element) {
-    const content = element.nextElementSibling;
+    const content = element.querySelector('.icon-content');
     if (!content) return;
     content.style.display = content.style.display === "block" ? "none" : "block";
   }
@@ -232,6 +254,7 @@
   .service-card { min-width: 0 !important; width: 100% !important; max-width: 100% !important; flex-direction: column !important; text-align: center; align-items: center; }
   .service-card img { width: 100% !important; max-width: 280px; height: auto; }
   .about-icons { flex-direction: column !important; }
+  .toggle-buttons-container { flex-direction: column !important; }
 }
 </style>
 </body>
