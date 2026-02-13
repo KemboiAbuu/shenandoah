@@ -18,7 +18,7 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(255, 255, 255, 0.96);
+    background: rgba(255, 255, 255, 0.96); /* VERY STRONG FADE */
     z-index: -1;
 }
 
@@ -32,6 +32,7 @@ body::before {
 .sub-program { display: flex; gap: 15px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background: #fff; }
 .sub-program img { width: 120px; height: 120px; object-fit: cover; border-radius: 8px; }
 
+/* ===== HIGHLIGHTS ROW ===== */
 .highlights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
 .highlight-card { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 20px; }
 .highlight-card img { width: 100%; height: 180px; object-fit: cover; border-radius: 6px; margin-bottom: 15px; }
@@ -39,115 +40,26 @@ blockquote { font-style: italic; margin-bottom: 15px; }
 .cta { display: inline-block; margin-top: 20px; padding: 12px 25px; background: #000; color: #fff; text-decoration: none; border-radius: 5px; }
 hr { margin: 80px 0; border: none; border-top: 1px solid #ddd; }
 
-/* ===== HAMBURGER MENU STYLES ===== */
-.hamburger {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
+@media (max-width: 900px) {
+    .highlights-grid { grid-template-columns: 1fr; }
 }
-
-.mobile-menu {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 200px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    z-index: 999;
-}
-
-.mobile-menu li {
-    list-style: none;
-}
-
-.mobile-menu a {
-    display: block;
-    padding: 12px 20px;
-    text-decoration: none;
-    color: #000;
-    border-bottom: 1px solid #eee;
-}
-
-.mobile-menu a:hover {
-    background: #f5f5f5;
-}
-
-.mobile-menu.show {
-    display: block;
-}
-
-/* ===== MOBILE ONLY CHANGES ===== */
 @media (max-width: 768px) {
-
-    nav ul {
-        display: none !important;
-    }
-
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    html, body {
-        overflow-x: hidden;
-    }
-
-    .sub-programs,
-    .highlights-grid {
-        display: flex !important;
-        flex-direction: column !important;
-    }
-
-    .sub-program {
-        flex-direction: column !important;
-        text-align: center;
-        align-items: center;
-    }
-
-    .sub-program img {
-        width: 100% !important;
-        max-width: 280px;
-        height: auto;
-    }
+    .sub-programs { grid-template-columns: 1fr; }
+    .sub-program { flex-direction: column; align-items: center; text-align: center; }
 }
 </style>
 </head>
 
 <body>
-
 <header>
   <div class="container">
     <nav>
-
-      <!-- LOGO (UNCHANGED) -->
       <div class="logo">Shenandoah Heritage Homeschool Collective</div>
-
-      <!-- DESKTOP NAV (UNCHANGED) -->
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Programs</a></li>
         <li><a href="contact.html" class="cta">Join Us</a></li>
       </ul>
-
-      <!-- MOBILE HAMBURGER -->
-      <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
-
-      <!-- MOBILE MENU -->
-      <ul class="mobile-menu" id="mobileMenu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Programs</a></li>
-        <li><a href="contact.html">Join Us</a></li>
-      </ul>
-
     </nav>
   </div>
 </header>
@@ -179,27 +91,143 @@ Our core educational offerings are designed to celebrate heritage, encourage exc
 </div>
 </div>
 
-<!-- (REST OF YOUR CONTENT REMAINS EXACTLY THE SAME — NOT REMOVED) -->
+<div class="program">
+<h3>2. Cultural Focus</h3>
+<div class="sub-programs">
+<div class="sub-program">
+<img src="images/curriculumintergration.jpg">
+<div>
+<h4>Curriculum Integration</h4>
+<p>Ensure that your curriculum includes African American literature, historical figures, and contributions to various fields. This can be woven into subjects like history, literature, and social studies.</p>
+</div>
+</div>
+<div class="sub-program">
+<img src="images/culturalexchange.jpg">
+<div>
+<h4>Cultural Exchanges</h4>
+<p>Facilitate exchanges with other cultural communities to promote understanding and appreciation of diverse heritages. This can include virtual pen pals or collaborative projects with other schools.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="program">
+<h3>3. Community Impact</h3>
+<div class="sub-programs">
+<div class="sub-program">
+<img src="images/communityservice.jpg">
+<div>
+<h4>Community Service Projects</h4>
+<p>Engage students in community service projects that benefit their local area while teaching them about civic responsibility and leadership.</p>
+</div>
+</div>
+<div class="sub-program">
+<img src="images/parentcommunityinvolvement.jpg">
+<div>
+<h4>Parent & Community Involvement</h4>
+<p>Encourage parents and community members to participate in school activities, such as volunteering, mentoring, or leading workshops, to strengthen community ties.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="program">
+<h3>4. Community Building & Connection</h3>
+<div class="sub-programs">
+<div class="sub-program">
+<img src="images/onlinecommunity.jpg">
+<div>
+<h4>Online Community Platform</h4>
+<p>Launch an online community platform where students, parents, and educators can connect, share resources, and support each other. This space can host discussions, share educational materials, and celebrate achievements.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<hr>
+
+<!-- ================= HIGHLIGHTS ================= -->
+<section class="container section">
+<h2>HIGHLIGHTS</h2>
+<p class="section-intro">
+Current events, learning resources, and community voices.
+</p>
+
+<div class="highlights-grid">
+<div class="highlight-card">
+<img src="images/workshop.jpg">
+<h4>Upcoming Events</h4>
+<p>Workshops, field trips, and celebrations.</p>
+</div>
+
+<div class="highlight-card">
+<h4>Educational Materials</h4>
+<ul>
+<li><a href="#">The Heritage Reader</a></li>
+<li><a href="#">Black History for Kids</a></li>
+<li><a href="#">Cultural Connections</a></li>
+</ul>
+</div>
+
+<div class="highlight-card">
+<h4>Testimonials</h4>
+<blockquote>“This collective helped my child build confidence.”</blockquote>
+<blockquote>“I feel connected to my culture.”</blockquote>
+</div>
+</div>
+</section>
+
+<hr>
+
+<!-- ================= CONTACT ================= -->
+<section class="container section">
+<h2>CONTACT US</h2>
+<p class="section-intro">
+Interested in joining or learning more?
+</p>
+<div style="text-align:center;">
+<a href="contact.html" class="cta">Get in Touch</a>
+</div>
+</section>
 
 <footer>
 <p style="text-align:center;">&copy; 2026 Shenandoah Heritage Homeschool Collective</p>
 </footer>
+<style>
+@media (max-width: 768px) {
 
-<script>
-function toggleMenu() {
-    const menu = document.getElementById("mobileMenu");
-    menu.classList.toggle("show");
+  html, body {
+    overflow-x: hidden;
+  }
+
+  nav {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column !important;
+  }
+
+  .sub-programs,
+  .highlights-grid {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .sub-program {
+    flex-direction: column !important;
+    text-align: center;
+    align-items: center;
+  }
+
+  .sub-program img {
+    width: 100% !important;
+    max-width: 280px;
+    height: auto;
+  }
 }
-
-document.addEventListener("click", function(event) {
-    const menu = document.getElementById("mobileMenu");
-    const hamburger = document.querySelector(".hamburger");
-
-    if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
-        menu.classList.remove("show");
-    }
-});
-</script>
-
+</style>
 </body>
 </html>
