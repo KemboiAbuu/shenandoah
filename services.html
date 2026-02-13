@@ -18,7 +18,7 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(255, 255, 255, 0.96); /* VERY STRONG FADE */
+    background: rgba(255, 255, 255, 0.96);
     z-index: -1;
 }
 
@@ -32,7 +32,6 @@ body::before {
 .sub-program { display: flex; gap: 15px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background: #fff; }
 .sub-program img { width: 120px; height: 120px; object-fit: cover; border-radius: 8px; }
 
-/* ===== HIGHLIGHTS ROW ===== */
 .highlights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
 .highlight-card { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 20px; }
 .highlight-card img { width: 100%; height: 180px; object-fit: cover; border-radius: 6px; margin-bottom: 15px; }
@@ -40,74 +39,110 @@ blockquote { font-style: italic; margin-bottom: 15px; }
 .cta { display: inline-block; margin-top: 20px; padding: 12px 25px; background: #000; color: #fff; text-decoration: none; border-radius: 5px; }
 hr { margin: 80px 0; border: none; border-top: 1px solid #ddd; }
 
-/* ===== MOBILE MENU ===== */
-.hamburger { display: none; font-size: 1.8rem; cursor: pointer; }
+/* ===== HAMBURGER MENU ===== */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
 .mobile-menu {
     display: none;
     position: absolute;
     top: 60px;
-    right: 15px;
+    right: 20px;
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     width: 200px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    flex-direction: column;
-    z-index: 100;
+    z-index: 999;
 }
-.mobile-menu a { display: block; padding: 10px 20px; text-decoration: none; color: #000; font-weight: bold; border-bottom: 1px solid #ddd; }
-.mobile-menu a:hover { background: #f2f2f2; }
 
-/* ===== RESPONSIVE ===== */
+.mobile-menu li {
+    list-style: none;
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #000;
+    border-bottom: 1px solid #eee;
+}
+
+.mobile-menu a:hover {
+    background: #f5f5f5;
+}
+
+/* ===== MOBILE ONLY CHANGES ===== */
 @media (max-width: 768px) {
-  html, body {
-    overflow-x: hidden;
-  }
 
-  /* Remove school name, show hamburger only */
-  nav {
-    flex-direction: row !important;
-    justify-content: flex-end;
-    align-items: center;
-    text-align: right;
-  }
+    nav ul {
+        display: none !important;
+    }
 
-  nav ul { display: none; }
+    nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+    }
 
-  .hamburger { display: block; }
+    .hamburger {
+        display: block;
+    }
 
-  /* Mobile program & highlights adjustments */
-  .sub-programs,
-  .highlights-grid {
-    display: flex !important;
-    flex-direction: column !important;
-  }
+    html, body {
+        overflow-x: hidden;
+    }
 
-  .sub-program {
-    flex-direction: column !important;
-    text-align: center;
-    align-items: center;
-  }
+    .sub-programs,
+    .highlights-grid {
+        display: flex !important;
+        flex-direction: column !important;
+    }
 
-  .sub-program img {
-    width: 100% !important;
-    max-width: 280px;
-    height: auto;
-  }
+    .sub-program {
+        flex-direction: column !important;
+        text-align: center;
+        align-items: center;
+    }
+
+    .sub-program img {
+        width: 100% !important;
+        max-width: 280px;
+        height: auto;
+    }
 }
 </style>
 </head>
 
 <body>
+
 <header>
   <div class="container">
     <nav>
-      <i class="fas fa-bars hamburger" onclick="toggleMobileMenu()"></i>
-      <ul id="mobileMenu" class="mobile-menu">
+
+      <!-- LOGO (UNCHANGED) -->
+      <div class="logo">Shenandoah Heritage Homeschool Collective</div>
+
+      <!-- DESKTOP NAV (UNCHANGED) -->
+      <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Programs</a></li>
         <li><a href="contact.html" class="cta">Join Us</a></li>
       </ul>
+
+      <!-- MOBILE HAMBURGER -->
+      <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+
+      <ul class="mobile-menu" id="mobileMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Programs</a></li>
+        <li><a href="contact.html">Join Us</a></li>
+      </ul>
+
     </nav>
   </div>
 </header>
@@ -244,19 +279,18 @@ Interested in joining or learning more?
 </footer>
 
 <script>
-// Hamburger toggle
-function toggleMobileMenu() {
-  const menu = document.getElementById('mobileMenu');
-  menu.style.display = (menu.style.display === "block") ? "none" : "block";
+function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
 }
 
-// Close menu when clicking outside
-document.addEventListener('click', function(e){
-  const menu = document.getElementById('mobileMenu');
-  const hamburger = document.querySelector('.hamburger');
-  if(menu && !menu.contains(e.target) && !hamburger.contains(e.target)){
-    menu.style.display = 'none';
-  }
+document.addEventListener("click", function(event) {
+    const menu = document.getElementById("mobileMenu");
+    const hamburger = document.querySelector(".hamburger");
+
+    if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+        menu.style.display = "none";
+    }
 });
 </script>
 
