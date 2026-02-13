@@ -68,29 +68,25 @@ body::before {
 .mobile-menu a { display: block; padding: 10px 20px; text-decoration: none; color: #000; font-weight: bold; border-bottom: 1px solid #ddd; }
 .mobile-menu a:hover { background: #f2f2f2; }
 
+/* Header adjustments for logo & name */
+header .container { display: flex; flex-direction: column; gap: 5px; }
+header nav { display: flex; justify-content: space-between; align-items: center; flex-wrap: nowrap; }
+header .company-name { text-align: center; font-weight: bold; font-size: 1rem; }
+
 /* Responsive adjustments */
 @media (max-width: 1024px) { .service-cards { justify-content: space-around; } }
 @media (max-width: 768px) {
   html, body { overflow-x: hidden; }
-  
-  /* Logo + Name + Hamburger row */
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap;
-  }
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.9rem;
-    font-weight: bold;
-  }
-  .logo img { height: 60px; width: auto; }
 
-  nav ul { display: none; } /* hide desktop nav */
+  nav { flex-direction: row; justify-content: space-between; align-items: center; }
+
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo img { height: 50px; width: auto; }
+
+  nav ul { display: none; }
   .hamburger { display: block; }
+
+  .company-name { font-size: 0.9rem; }
 
   .service-cards { flex-direction: column; align-items: center; }
   .service-card { min-width: 0; width: 100%; max-width: 100%; flex-direction: column; text-align: center; align-items: center; }
@@ -108,7 +104,6 @@ body::before {
     <nav>
       <div class="logo">
         <img src="images/logo.jpg" alt="Shenandoah Heritage Logo">
-        SHENANDOAH HERITAGE HOMESCHOOL COLLECTIVE
       </div>
       <i class="fas fa-bars hamburger" onclick="toggleMobileMenu()"></i>
 
@@ -118,13 +113,7 @@ body::before {
         <li><a href="contact.html" class="cta">Join Us</a></li>
       </ul>
     </nav>
-
-    <!-- Mobile menu -->
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html">Home</a>
-      <a href="services.html">Programs</a>
-      <a href="contact.html">Join Us</a>
-    </div>
+    <div class="company-name">SHENANDOAH HERITAGE HOMESCHOOL COLLECTIVE</div>
   </div>
 </header>
 
