@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-body { position: relative; z-index: 0; margin:0; padding:0; font-family: 'Inter', sans-serif;}
+body { position: relative; z-index: 0; }
 body::before {
   content: "";
   position: fixed; top: 0; left: 0;
@@ -50,12 +51,10 @@ body::before {
 
 /* Hamburger and mobile nav */
 .hamburger { display: none; font-size: 1.8rem; cursor: pointer; }
-
-/* Mobile menu */
 .mobile-menu {
   display: none;
   position: absolute;
-  top: 70px;
+  top: 80px;
   right: 15px;
   background: #fff;
   border: 1px solid #ddd;
@@ -68,28 +67,17 @@ body::before {
 .mobile-menu a { display: block; padding: 10px 20px; text-decoration: none; color: #000; font-weight: bold; border-bottom: 1px solid #ddd; }
 .mobile-menu a:hover { background: #f2f2f2; }
 
-/* Header adjustments for logo & name */
-header .container { display: flex; flex-direction: column; gap: 5px; }
-header nav { display: flex; justify-content: space-between; align-items: center; flex-wrap: nowrap; }
-header .company-name { text-align: center; font-weight: bold; font-size: 1rem; }
-
 /* Responsive adjustments */
-@media (max-width: 1024px) { .service-cards { justify-content: space-around; } }
-
 @media (max-width: 768px) {
   html, body { overflow-x: hidden; }
-
-  /* Mobile: logo left, hamburger right in one row */
-  header .container { flex-direction: column; }
-  header nav { flex-direction: row; justify-content: space-between; align-items: center; }
-
-  .logo { display: flex; align-items: center; gap: 8px; }
-  .logo img { height: 50px; width: auto; }
-
-  nav ul { display: none; }
+  
+  nav { flex-direction: row; justify-content: space-between; align-items: center; }
+  nav ul { display: none; } /* hide desktop nav */
   .hamburger { display: block; }
 
-  .company-name { font-size: 0.9rem; margin-top: 5px; }
+  /* Logo far left */
+  .logo { flex-direction: row !important; justify-content: flex-start; text-align: left; }
+  .logo img { height: 80px !important; margin: 0 10px 0 0; }
 
   .service-cards { flex-direction: column; align-items: center; }
   .service-card { min-width: 0; width: 100%; max-width: 100%; flex-direction: column; text-align: center; align-items: center; }
@@ -107,6 +95,7 @@ header .company-name { text-align: center; font-weight: bold; font-size: 1rem; }
     <nav>
       <div class="logo">
         <img src="images/logo.jpg" alt="Shenandoah Heritage Logo">
+        SHENANDOAH HERITAGE HOMESCHOOL COLLECTIVE
       </div>
       <i class="fas fa-bars hamburger" onclick="toggleMobileMenu()"></i>
 
@@ -116,7 +105,13 @@ header .company-name { text-align: center; font-weight: bold; font-size: 1rem; }
         <li><a href="contact.html" class="cta">Join Us</a></li>
       </ul>
     </nav>
-    <div class="company-name">SHENANDOAH HERITAGE HOMESCHOOL COLLECTIVE</div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Programs</a>
+      <a href="contact.html">Join Us</a>
+    </div>
   </div>
 </header>
 
@@ -140,6 +135,7 @@ header .company-name { text-align: center; font-weight: bold; font-size: 1rem; }
     <button data-target="values">Values</button>
   </div>
 
+  <!-- Toggleable Content -->
   <div id="about" class="toggle-content">
     <p>The Shenandoah Heritage Homeschool Collective is a dedicated educational initiative focused on celebrating and preserving the rich cultural heritage of Black and Brown Americans. Our program is designed to provide a nurturing and inclusive learning environment where students can explore their roots, embrace their identities, and develop a strong sense of pride and belonging. We offer a diverse curriculum that integrates cultural exploration with academic excellence, featuring activities such as cultural workshops, heritage celebrations, and community service projects. Our mission is to empower students with the knowledge and confidence to thrive in an ever-changing world, fostering leaders who are proud of their heritage and equipped to make meaningful contributions to society. At the heart of our collective is a commitment to inclusivity, empowerment, and pride, creating a vibrant community where every student is inspired to reach their full potential.</p>
   </div>
