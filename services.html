@@ -40,12 +40,60 @@ blockquote { font-style: italic; margin-bottom: 15px; }
 .cta { display: inline-block; margin-top: 20px; padding: 12px 25px; background: #000; color: #fff; text-decoration: none; border-radius: 5px; }
 hr { margin: 80px 0; border: none; border-top: 1px solid #ddd; }
 
-@media (max-width: 900px) {
-    .highlights-grid { grid-template-columns: 1fr; }
+/* ===== MOBILE MENU ===== */
+.hamburger { display: none; font-size: 1.8rem; cursor: pointer; }
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 200px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    flex-direction: column;
+    z-index: 100;
 }
+.mobile-menu a { display: block; padding: 10px 20px; text-decoration: none; color: #000; font-weight: bold; border-bottom: 1px solid #ddd; }
+.mobile-menu a:hover { background: #f2f2f2; }
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-    .sub-programs { grid-template-columns: 1fr; }
-    .sub-program { flex-direction: column; align-items: center; text-align: center; }
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* Remove school name, show hamburger only */
+  nav {
+    flex-direction: row !important;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: right;
+  }
+
+  nav ul { display: none; }
+
+  .hamburger { display: block; }
+
+  /* Mobile program & highlights adjustments */
+  .sub-programs,
+  .highlights-grid {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .sub-program {
+    flex-direction: column !important;
+    text-align: center;
+    align-items: center;
+  }
+
+  .sub-program img {
+    width: 100% !important;
+    max-width: 280px;
+    height: auto;
+  }
 }
 </style>
 </head>
@@ -54,8 +102,8 @@ hr { margin: 80px 0; border: none; border-top: 1px solid #ddd; }
 <header>
   <div class="container">
     <nav>
-      <div class="logo">Shenandoah Heritage Homeschool Collective</div>
-      <ul>
+      <i class="fas fa-bars hamburger" onclick="toggleMobileMenu()"></i>
+      <ul id="mobileMenu" class="mobile-menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Programs</a></li>
         <li><a href="contact.html" class="cta">Join Us</a></li>
@@ -194,40 +242,23 @@ Interested in joining or learning more?
 <footer>
 <p style="text-align:center;">&copy; 2026 Shenandoah Heritage Homeschool Collective</p>
 </footer>
-<style>
-@media (max-width: 768px) {
 
-  html, body {
-    overflow-x: hidden;
-  }
-
-  nav {
-    flex-direction: column !important;
-    text-align: center;
-  }
-
-  nav ul {
-    flex-direction: column !important;
-  }
-
-  .sub-programs,
-  .highlights-grid {
-    display: flex !important;
-    flex-direction: column !important;
-  }
-
-  .sub-program {
-    flex-direction: column !important;
-    text-align: center;
-    align-items: center;
-  }
-
-  .sub-program img {
-    width: 100% !important;
-    max-width: 280px;
-    height: auto;
-  }
+<script>
+// Hamburger toggle
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  menu.style.display = (menu.style.display === "block") ? "none" : "block";
 }
-</style>
+
+// Close menu when clicking outside
+document.addEventListener('click', function(e){
+  const menu = document.getElementById('mobileMenu');
+  const hamburger = document.querySelector('.hamburger');
+  if(menu && !menu.contains(e.target) && !hamburger.contains(e.target)){
+    menu.style.display = 'none';
+  }
+});
+</script>
+
 </body>
 </html>
