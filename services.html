@@ -18,7 +18,7 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(255, 255, 255, 0.96);
+    background: rgba(255, 255, 255, 0.96); /* VERY STRONG FADE */
     z-index: -1;
 }
 
@@ -32,6 +32,7 @@ body::before {
 .sub-program { display: flex; gap: 15px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background: #fff; }
 .sub-program img { width: 120px; height: 120px; object-fit: cover; border-radius: 8px; }
 
+/* ===== HIGHLIGHTS ROW ===== */
 .highlights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
 .highlight-card { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 20px; }
 .highlight-card img { width: 100%; height: 180px; object-fit: cover; border-radius: 6px; margin-bottom: 15px; }
@@ -42,53 +43,14 @@ hr { margin: 80px 0; border: none; border-top: 1px solid #ddd; }
 @media (max-width: 900px) {
     .highlights-grid { grid-template-columns: 1fr; }
 }
-
-/* ===== MOBILE ONLY ALIGNMENT FIX ===== */
 @media (max-width: 768px) {
-
-    html, body {
-        overflow-x: hidden;
-    }
-
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    nav ul {
-        display: flex;
-        justify-content: flex-end;   /* ← moves buttons to right */
-        width: 100%;
-        text-align: right;
-        padding-right: 15px;
-    }
-
-    nav ul li {
-        margin-left: 15px;
-    }
-
-    .sub-programs { 
-        grid-template-columns: 1fr; 
-    }
-
-    .sub-program { 
-        flex-direction: column; 
-        align-items: center; 
-        text-align: center; 
-    }
-
-    .sub-program img {
-        width: 100%;
-        max-width: 280px;
-        height: auto;
-    }
+    .sub-programs { grid-template-columns: 1fr; }
+    .sub-program { flex-direction: column; align-items: center; text-align: center; }
 }
 </style>
 </head>
 
 <body>
-
 <header>
   <div class="container">
     <nav>
@@ -176,16 +138,16 @@ Our core educational offerings are designed to celebrate heritage, encourage exc
 <img src="images/onlinecommunity.jpg">
 <div>
 <h4>Online Community Platform</h4>
-<p>Launch an online community platform where students, parents, and educators can connect, share resources, and support each other.</p>
+<p>Launch an online community platform where students, parents, and educators can connect, share resources, and support each other. This space can host discussions, share educational materials, and celebrate achievements.</p>
 </div>
 </div>
 </div>
 </div>
-
 </section>
 
 <hr>
 
+<!-- ================= HIGHLIGHTS ================= -->
 <section class="container section">
 <h2>HIGHLIGHTS</h2>
 <p class="section-intro">
@@ -218,6 +180,7 @@ Current events, learning resources, and community voices.
 
 <hr>
 
+<!-- ================= CONTACT ================= -->
 <section class="container section">
 <h2>CONTACT US</h2>
 <p class="section-intro">
@@ -231,6 +194,40 @@ Interested in joining or learning more?
 <footer>
 <p style="text-align:center;">&copy; 2026 Shenandoah Heritage Homeschool Collective</p>
 </footer>
+<style>
+@media (max-width: 768px) {
 
+  html, body {
+    overflow-x: hidden;
+  }
+
+  nav {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column !important;
+  }
+
+  .sub-programs,
+  .highlights-grid {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .sub-program {
+    flex-direction: column !important;
+    text-align: center;
+    align-items: center;
+  }
+
+  .sub-program img {
+    width: 100% !important;
+    max-width: 280px;
+    height: auto;
+  }
+}
+</style>
 </body>
 </html>
