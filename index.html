@@ -65,11 +65,43 @@
     .service-card p { margin-bottom: 0; }
 
     @media (max-width: 1024px) { .service-cards { justify-content: space-around; } }
+
+    /* MOBILE VIEW ADJUSTMENTS */
     @media (max-width: 768px) {
-      .service-cards { flex-direction: column; align-items: center; }
-      .service-card { width: 100%; max-width: 400px; flex-direction: column; align-items: center; text-align: center; }
-      .service-card img { margin: 0 auto 10px; }
-      .toggle-buttons-container { flex-direction: column; }
+      html, body { overflow-x: hidden; }
+
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        padding: 10px 15px;
+      }
+
+      .logo { margin: 0; }
+      .logo img { height: 80px; margin: 0; }
+
+      nav ul {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      nav ul li a {
+        display: block;
+        padding: 0;
+        font-size: 0.95rem;
+      }
+
+      .service-cards { flex-direction: column !important; }
+      .service-card { min-width: 0 !important; width: 100% !important; max-width: 100% !important; flex-direction: column !important; text-align: center; align-items: center; }
+      .service-card img { width: 100% !important; max-width: 280px; height: auto; }
+
+      .about-icons { flex-direction: column !important; }
+      .toggle-buttons-container { flex-direction: column !important; }
     }
   </style>
 </head>
@@ -79,7 +111,7 @@
   <div class="container">
     <nav>
       <div class="logo">
-        <img src="images/logo.jpg" alt="Shenandoah Heritage Logo" style="height:150px; vertical-align: middle; margin-right:10px;">
+        <img src="images/logo.jpg" alt="Shenandoah Heritage Logo" style="vertical-align: middle; margin-right:10px;">
         SHENANDOAH HERITAGE HOMESCHOOL COLLECTIVE
       </div>
       <ul>
@@ -220,42 +252,21 @@
 </footer>
 
 <script>
-  // Toggle horizontal section content
   const buttons = document.querySelectorAll('.toggle-button');
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
       const targetId = btn.getAttribute('data-target');
       const content = document.getElementById(targetId);
-      if (content.style.display === "block") {
-        content.style.display = "none";
-      } else {
-        content.style.display = "block";
-      }
+      content.style.display = (content.style.display === "block") ? "none" : "block";
     });
   });
 
-  // Existing icon box toggle
   function toggleContent(element) {
     const content = element.querySelector('.icon-content');
     if (!content) return;
-    content.style.display = content.style.display === "block" ? "none" : "block";
+    content.style.display = (content.style.display === "block") ? "none" : "block";
   }
 </script>
 
-<style>
-@media (max-width: 768px) {
-  html, body { overflow-x: hidden; }
-  nav { flex-direction: column !important; text-align: center; }
-  nav ul { flex-direction: column !important; width: 100%; }
-  nav ul li a { display: block; padding: 12px; }
-  .logo { flex-direction: column !important; text-align: center; }
-  .logo img { height: 80px !important; margin-bottom: 10px; }
-  .service-cards { flex-direction: column !important; }
-  .service-card { min-width: 0 !important; width: 100% !important; max-width: 100% !important; flex-direction: column !important; text-align: center; align-items: center; }
-  .service-card img { width: 100% !important; max-width: 280px; height: auto; }
-  .about-icons { flex-direction: column !important; }
-  .toggle-buttons-container { flex-direction: column !important; }
-}
-</style>
 </body>
 </html>
