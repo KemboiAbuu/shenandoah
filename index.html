@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,14 +29,34 @@
       z-index: -1; /* behind all content */
     }
 
-    /* Our Story Section */
-    .our-story {
-      padding: 20px;
+    /* Section buttons */
+    .toggle-button {
+      display: block;
+      width: 100%;
+      text-align: left;
+      background: #f2f2f2;
+      border: 1px solid #ddd;
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin: 20px 0 10px 0;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .toggle-button:hover {
+      background: #e0e0e0;
+    }
+
+    .toggle-content {
+      display: none;
+      padding: 15px;
       border: 1px solid #ddd;
       border-radius: 8px;
-      background: #fdfdfd;
-      margin: 40px 0;
+      background: #fafafa;
+      margin-bottom: 20px;
     }
+
+    /* Our Story Section */
     .our-story h3 { margin-top: 0; font-size: 1.4rem; }
 
     /* Mission/Vision Section */
@@ -47,16 +66,6 @@
       margin: 40px 0;
       flex-wrap: wrap;
     }
-    .mission, .vision {
-      flex: 1;
-      min-width: 250px;
-      padding: 20px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      background: #f9f9f9;
-      box-sizing: border-box;
-    }
-    .mission h3, .vision h3 { margin-top: 0; font-size: 1.2rem; }
 
     /* Goals/Values Section */
     .goals-values {
@@ -65,16 +74,6 @@
       margin: 40px 0;
       flex-wrap: wrap;
     }
-    .goals, .values {
-      flex: 1;
-      min-width: 250px;
-      padding: 20px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      background: #f0f0f0;
-      box-sizing: border-box;
-    }
-    .goals h3, .values h3 { margin-top: 0; font-size: 1.2rem; }
 
     /* Services Cards */
     .service-cards {
@@ -161,77 +160,46 @@
 
 <!-- About Us Section -->
 <section class="container section about-us">
-  <h2>About Us</h2>
-  <p>The Shenandoah Heritage Homeschool Collective is a dedicated educational initiative focused on celebrating and preserving the rich cultural heritage of Black and Brown Americans. Our program is designed to provide a nurturing and inclusive learning environment where students can explore their roots, embrace their identities, and develop a strong sense of pride and belonging. We offer a diverse curriculum that integrates cultural exploration with academic excellence, featuring activities such as cultural workshops, heritage celebrations, and community service projects. Our mission is to empower students with the knowledge and confidence to thrive in an ever-changing world, fostering leaders who are proud of their heritage and equipped to make meaningful contributions to society. At the heart of our collective is a commitment to inclusivity, empowerment, and pride, creating a vibrant community where every student is inspired to reach their full potential.
-  </p>
-  <div class="about-icons">
-
-    <div class="icon-box" onclick="toggleContent(this)">
-      <i class="fas fa-users"></i>
-      <span>Professional Team</span>
-      <div class="icon-content">
-        Ashleigh and Richard Muttai together with our amazing four children Neriah, Arielle, Levi and Rinnah.
-      </div>
-    </div>
-
-    <div class="icon-box" onclick="toggleContent(this)">
-      <i class="fas fa-gem"></i>
-      <span>Quality Materials</span>
-      <div class="icon-content">
-        We use culturally rich, research-based, and high-quality educational materials.
-      </div>
-    </div>
-
-    <div class="icon-box" onclick="toggleContent(this)">
-      <i class="fas fa-clock"></i>
-      <span>On-Time Delivery</span>
-      <div class="icon-content">
-        Programs, workshops, and curriculum plans are delivered in a timely and organized manner.
-      </div>
-    </div>
-
-  </div>
-  <div class="our-story">
-    <h3>Our Story</h3>
-    <p>
-      The Shenandoah Heritage Homeschool Collective emerged from a profound passion for education and a deep appreciation for the vibrant cultural tapestry of Black and Brown Americans. It was founded in response to a crucial realization: as African Americans, we are navigating an era of identity crisis, where the struggle to understand, embrace, and preserve our identity is more pressing than ever.
-      Our initiative is a call to action—a commitment to rediscovering and celebrating who we are. It is about empowering our community to confidently own our identity and enter every room with the assurance that we belong and have rightfully earned our place. Through education and cultural enrichment, we strive to instill in our students the confidence and conviction to navigate the world with pride and resilience.
-    </p>
- 
+  <button class="toggle-button" onclick="toggleContent(this)">About Us</button>
+  <div class="toggle-content">
+    <p>The Shenandoah Heritage Homeschool Collective is a dedicated educational initiative focused on celebrating and preserving the rich cultural heritage of Black and Brown Americans. Our program is designed to provide a nurturing and inclusive learning environment where students can explore their roots, embrace their identities, and develop a strong sense of pride and belonging. We offer a diverse curriculum that integrates cultural exploration with academic excellence, featuring activities such as cultural workshops, heritage celebrations, and community service projects. Our mission is to empower students with the knowledge and confidence to thrive in an ever-changing world, fostering leaders who are proud of their heritage and equipped to make meaningful contributions to society. At the heart of our collective is a commitment to inclusivity, empowerment, and pride, creating a vibrant community where every student is inspired to reach their full potential.</p>
   </div>
 
-  <div class="mission-vision">
-    <div class="mission">
-      <h3>Mission</h3>
-      <p>At Shenandoah Heritage Homeschool Collective, we are committed to delivering an enriching home education experience that centers on the roots and heritage of Black and Brown Americans. Our mission is to cultivate a deep understanding and appreciation of cultural history, empowering our students with a strong sense of pride, identity, and belonging. Through a diverse and inclusive curriculum, we aim to inspire lifelong learning and community engagement, fostering leaders who celebrate and contribute to the rich tapestry of our shared heritage</p>
-    </div>
-    <div class="vision">
-      <h3>Vision</h3>
-      <p>Our vision is to be a beacon of cultural education and empowerment, where every student is inspired to explore and embrace their heritage. We envision a future where our collective efforts create a vibrant community of learners who are proud of their roots and equipped to make meaningful contributions to society. By preserving and promoting the history and achievements of Black and Brown Americans, we strive to build a more inclusive and understanding world for generations to come.</p>
-    </div>
+  <button class="toggle-button" onclick="toggleContent(this)">Our Story</button>
+  <div class="toggle-content">
+    <p>The Shenandoah Heritage Homeschool Collective emerged from a profound passion for education and a deep appreciation for the vibrant cultural tapestry of Black and Brown Americans. It was founded in response to a crucial realization: as African Americans, we are navigating an era of identity crisis, where the struggle to understand, embrace, and preserve our identity is more pressing than ever. Our initiative is a call to action—a commitment to rediscovering and celebrating who we are. It is about empowering our community to confidently own our identity and enter every room with the assurance that we belong and have rightfully earned our place. Through education and cultural enrichment, we strive to instill in our students the confidence and conviction to navigate the world with pride and resilience.</p>
   </div>
 
-  <div class="goals-values">
-    <div class="goals">
-      <h3>Goals</h3>
-      <ol>
-        <li>	Cultural Education: Provide an enriching educational experience that emphasizes the history, culture, and contributions of Black and Brown Americans.</li>
-        <li>	Empowerment Through Knowledge: Equip students with the knowledge and skills needed to understand and appreciate their cultural identity and heritage.</li>
-        <li>	Community Engagement: Foster a strong sense of community and collaboration among students, parents, and educators to enhance learning and cultural appreciation.</li>
-        <li>	Holistic Development: Support the overall development of students by integrating academic, social, and emotional learning with cultural education.</li>
-        <li> Leadership and Advocacy: Cultivate future leaders who are confident in their identity and motivated to make positive contributions to society.</li>
-      </ol>
-    </div>
-    <div class="values">
-      <h3>Values</h3>
-      <ol>
-        <li>	Inclusivity: Create an inclusive learning environment that respects and celebrates diversity in all its forms.</li>
-        <li>	Respect for Heritage: Honor and preserve the rich cultural heritage of Black and Brown communities through education and storytelling.</li>
-        <li>	Lifelong Learning: Instill a love for lifelong learning and curiosity about the world and its diverse cultures.</li>
-        <li>	Empathy and Understanding: Encourage empathy, understanding, and respect for different perspectives and experiences.</li>
-        <li>	Collaboration: Promote collaboration and mutual support among students, parents, and educators to build a strong, united community.</li>
-      </ol>
-    </div>
+  <button class="toggle-button" onclick="toggleContent(this)">Mission</button>
+  <div class="toggle-content">
+    <p>At Shenandoah Heritage Homeschool Collective, we are committed to delivering an enriching home education experience that centers on the roots and heritage of Black and Brown Americans. Our mission is to cultivate a deep understanding and appreciation of cultural history, empowering our students with a strong sense of pride, identity, and belonging. Through a diverse and inclusive curriculum, we aim to inspire lifelong learning and community engagement, fostering leaders who celebrate and contribute to the rich tapestry of our shared heritage.</p>
+  </div>
+
+  <button class="toggle-button" onclick="toggleContent(this)">Vision</button>
+  <div class="toggle-content">
+    <p>Our vision is to be a beacon of cultural education and empowerment, where every student is inspired to explore and embrace their heritage. We envision a future where our collective efforts create a vibrant community of learners who are proud of their roots and equipped to make meaningful contributions to society. By preserving and promoting the history and achievements of Black and Brown Americans, we strive to build a more inclusive and understanding world for generations to come.</p>
+  </div>
+
+  <button class="toggle-button" onclick="toggleContent(this)">Goals</button>
+  <div class="toggle-content">
+    <ol>
+      <li>Cultural Education: Provide an enriching educational experience that emphasizes the history, culture, and contributions of Black and Brown Americans.</li>
+      <li>Empowerment Through Knowledge: Equip students with the knowledge and skills needed to understand and appreciate their cultural identity and heritage.</li>
+      <li>Community Engagement: Foster a strong sense of community and collaboration among students, parents, and educators to enhance learning and cultural appreciation.</li>
+      <li>Holistic Development: Support the overall development of students by integrating academic, social, and emotional learning with cultural education.</li>
+      <li>Leadership and Advocacy: Cultivate future leaders who are confident in their identity and motivated to make positive contributions to society.</li>
+    </ol>
+  </div>
+
+  <button class="toggle-button" onclick="toggleContent(this)">Values</button>
+  <div class="toggle-content">
+    <ol>
+      <li>Inclusivity: Create an inclusive learning environment that respects and celebrates diversity in all its forms.</li>
+      <li>Respect for Heritage: Honor and preserve the rich cultural heritage of Black and Brown communities through education and storytelling.</li>
+      <li>Lifelong Learning: Instill a love for lifelong learning and curiosity about the world and its diverse cultures.</li>
+      <li>Empathy and Understanding: Encourage empathy, understanding, and respect for different perspectives and experiences.</li>
+      <li>Collaboration: Promote collaboration and mutual support among students, parents, and educators to build a strong, united community.</li>
+    </ol>
   </div>
 </section>
 
@@ -284,6 +252,18 @@
 <footer>
   <p>&copy; 2026 Shenandoah Heritage Homeschool Collective</p>
 </footer>
+
+<script>
+  function toggleContent(button) {
+    const content = button.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  }
+</script>
+
 <style>
 @media (max-width: 768px) {
 
@@ -341,5 +321,4 @@
 }
 </style>
 </body>
-
 </html>
