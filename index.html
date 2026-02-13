@@ -75,10 +75,13 @@ header .company-name { text-align: center; font-weight: bold; font-size: 1rem; }
 
 /* Responsive adjustments */
 @media (max-width: 1024px) { .service-cards { justify-content: space-around; } }
+
 @media (max-width: 768px) {
   html, body { overflow-x: hidden; }
 
-  nav { flex-direction: row; justify-content: space-between; align-items: center; }
+  /* Mobile: logo left, hamburger right in one row */
+  header .container { flex-direction: column; }
+  header nav { flex-direction: row; justify-content: space-between; align-items: center; }
 
   .logo { display: flex; align-items: center; gap: 8px; }
   .logo img { height: 50px; width: auto; }
@@ -86,7 +89,7 @@ header .company-name { text-align: center; font-weight: bold; font-size: 1rem; }
   nav ul { display: none; }
   .hamburger { display: block; }
 
-  .company-name { font-size: 0.9rem; }
+  .company-name { font-size: 0.9rem; margin-top: 5px; }
 
   .service-cards { flex-direction: column; align-items: center; }
   .service-card { min-width: 0; width: 100%; max-width: 100%; flex-direction: column; text-align: center; align-items: center; }
@@ -137,7 +140,6 @@ header .company-name { text-align: center; font-weight: bold; font-size: 1rem; }
     <button data-target="values">Values</button>
   </div>
 
-  <!-- Toggleable Content -->
   <div id="about" class="toggle-content">
     <p>The Shenandoah Heritage Homeschool Collective is a dedicated educational initiative focused on celebrating and preserving the rich cultural heritage of Black and Brown Americans. Our program is designed to provide a nurturing and inclusive learning environment where students can explore their roots, embrace their identities, and develop a strong sense of pride and belonging. We offer a diverse curriculum that integrates cultural exploration with academic excellence, featuring activities such as cultural workshops, heritage celebrations, and community service projects. Our mission is to empower students with the knowledge and confidence to thrive in an ever-changing world, fostering leaders who are proud of their heritage and equipped to make meaningful contributions to society. At the heart of our collective is a commitment to inclusivity, empowerment, and pride, creating a vibrant community where every student is inspired to reach their full potential.</p>
   </div>
