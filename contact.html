@@ -1,140 +1,178 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Contact | Shenandoah Heritage</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shenandoah | Contact</title>
 
 <style>
 :root{
-    --primary: #38bdf8;
+    --sky: #38bdf8;
     --white: #ffffff;
 }
 
-/* CONTACT SECTION (New Layout Style Only) */
-.contact-section {
-    max-width: 900px;
-    margin: 60px auto;
+/* ================= GLOBAL ================= */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
     background: var(--white);
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
-.contact-section h2 {
-    font-size: 36px;
+/* ================= NAVIGATION ================= */
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    gap: 25px;
+    background: var(--sky);
+    padding: 15px 30px;
+}
+
+.navbar a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--sky);
+    min-width: 200px;
+    border-radius: 6px;
+    z-index: 100;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    color: var(--white);
+}
+
+.dropdown-content a:hover {
+    background: var(--white);
+    color: var(--sky);
+}
+
+/* Show dropdown */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ================= CONTACT SECTION (UNCHANGED STYLING) ================= */
+.contact-section {
+    max-width: 800px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     text-align: center;
-    margin-bottom: 10px;
 }
 
-.contact-section p.subtitle {
-    text-align: center;
-    margin-bottom: 40px;
-    color: #555;
+.contact-section h1 {
+    font-family: "Algerian", "Times New Roman", serif;
+    font-size: 42px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #000;
 }
 
-.contact-info {
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.contact-info p {
+.contact-section p {
     font-size: 18px;
-    margin: 8px 0;
+    margin: 10px 0;
+    color: #000;
 }
 
-.contact-form {
-    max-width: 600px;
-    margin: auto;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    font-size: 15px;
-}
-
-.contact-form button {
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 6px;
-    background: var(--primary);
+.contact-section a {
+    display: inline-block;
     color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
+    text-decoration: none;
+    background: #3498db;
+    padding: 10px 15px;
+    margin: 8px;
+    border-radius: 6px;
+    transition: background 0.3s;
 }
 
-.contact-form button:hover {
-    background: #0ea5e9;
+.contact-section a:hover {
+    background: #2980b9;
 }
 
-/* MOBILE */
+/* ================= FOOTER ================= */
+footer {
+    background: var(--sky);
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        text-align: center;
+    .navbar {
+        flex-wrap: wrap;
     }
 
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .contact-section {
-        margin: 30px 15px;
-        padding: 25px;
+    .dropdown-content {
+        position: static;
+        width: 100%;
     }
 }
 </style>
-
 </head>
 <body>
 
-<header>
-  <div class="container">
-    <nav style="display:flex; justify-content:space-between; align-items:center;">
-      <ul style="display:flex; gap:20px; list-style:none; padding:0; margin:0;">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Programs</a></li>
-        <li><a href="contact.html" class="cta">Join Us</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<!-- NAVBAR -->
+<div class="navbar">
+    <a href="index.html">Home</a>
 
+    <div class="dropdown">
+        <a href="#">Programs ▼</a>
+        <div class="dropdown-content">
+            <a href="services.html">Our Programs</a>
+        </div>
+    </div>
+</div>
+
+<!-- CONTACT SECTION -->
 <section class="contact-section">
-  <h2>Contact Us</h2>
-  <p class="subtitle">We'd love to hear from you.</p>
+    <h1>Contact Us</h1>
 
-  <div class="contact-info">
-      <p><strong>Email:</strong> muttaiabuh@gmail.com</p>
-      <p><strong>Hours:</strong> Mon - Fri: 9am – 5pm</p>
-  </div>
+    <p>📍 USA,</p>
 
-  <!-- FORM (WORKING) -->
-  <form class="contact-form" action="https://formsubmit.co/muttaiabuh@gmail.com" method="POST">
-      
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="thankyou.html">
+    <p>
+        📧 Email:
+        <a href="mailto:shhomeschoolcollective@gmail.com">
+            shhomeschoolcollective@gmail.com
+        </a>
+    </p>
 
-      <input type="text" name="name" placeholder="Full Name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="text" name="phone" placeholder="Phone Number">
-      <textarea name="message" rows="5" placeholder="Message" required></textarea>
-      <button type="submit">Send Message</button>
-  </form>
+    <p>Follow us on social media:</p>
 
+    <a href="https://www.facebook.com/shhomeschoolcollective/" target="_blank">
+        Facebook
+    </a>
+
+    <a href="https://www.tiktok.com/@shhomeschoolcollective/" target="_blank">
+        TikTok
+    </a>
+
+    <a href="https://www.instagram.com/shhomeschoolcollective/" target="_blank">
+        Instagram
+    </a>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <p>&copy; 2026 Shenandoah Heritage Homeschool Collective</p>
+    &copy; 2026 Shenandoah Home Heritage Collective School . All Rights Reserved.
 </footer>
 
 </body>
