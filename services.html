@@ -39,7 +39,7 @@ blockquote { font-style: italic; margin-bottom: 15px; }
 .cta { display: inline-block; margin-top: 20px; padding: 12px 25px; background: #000; color: #fff; text-decoration: none; border-radius: 5px; }
 hr { margin: 80px 0; border: none; border-top: 1px solid #ddd; }
 
-/* ===== HAMBURGER MENU ===== */
+/* ===== HAMBURGER ===== */
 .hamburger {
   display: none;
   font-size: 28px;
@@ -47,10 +47,7 @@ hr { margin: 80px 0; border: none; border-top: 1px solid #ddd; }
   margin-left: auto;
 }
 
-@media (max-width: 900px) {
-    .highlights-grid { grid-template-columns: 1fr; }
-}
-
+/* ===== MOBILE DROPDOWN MENU ===== */
 @media (max-width: 768px) {
 
   html, body {
@@ -60,13 +57,32 @@ hr { margin: 80px 0; border: none; border-top: 1px solid #ddd; }
   nav {
     display: flex !important;
     align-items: center;
+    position: relative;
   }
 
   nav ul {
-    display: none !important;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #ffffff;
+    width: 220px;
     flex-direction: column !important;
-    width: 100%;
-    margin-top: 15px;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    display: none !important;
+  }
+
+  nav ul li {
+    padding: 12px 20px;
+    text-align: left;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #000;
   }
 
   nav ul.show {
@@ -104,7 +120,7 @@ hr { margin: 80px 0; border: none; border-top: 1px solid #ddd; }
     <nav>
       <div class="logo">Shenandoah Heritage Homeschool Collective</div>
 
-      <!-- HAMBURGER ICON -->
+      <!-- Hamburger Icon -->
       <div class="hamburger" onclick="toggleMenu()">☰</div>
 
       <ul id="navLinks">
@@ -130,20 +146,18 @@ Our core educational offerings are designed to celebrate heritage, encourage exc
 <img src="images/culturalworkshop.jpg">
 <div>
 <h4>Cultural Workshops</h4>
-<p>Offer workshops that explore African American history, art, and music. These can include storytelling sessions, art projects inspired by African American artists, and music classes featuring influential genres like jazz and blues.</p>
+<p>Offer workshops that explore African American history, art, and music.</p>
 </div>
 </div>
 <div class="sub-program">
 <img src="images/heritagecelebration.jpg">
 <div>
 <h4>Heritage Celebrations</h4>
-<p>Organize events that celebrate significant cultural holidays and milestones, such as Black History Month, Juneteenth, and Kwanzaa. These events can include performances, guest speakers, and community gatherings.</p>
+<p>Organize events celebrating cultural holidays and milestones.</p>
 </div>
 </div>
 </div>
 </div>
-
-<!-- REST OF YOUR PAGE REMAINS EXACTLY THE SAME -->
 
 <footer>
 <p style="text-align:center;">&copy; 2026 Shenandoah Heritage Homeschool Collective</p>
