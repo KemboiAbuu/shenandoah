@@ -187,7 +187,6 @@ hr { margin: 80px 0; border: none; border-top: 1px solid #ddd; }
 Our core educational offerings are designed to celebrate heritage, encourage excellence, and strengthen community.
 </p>
 
-<!-- 1 -->
 <div class="program">
 <h3>1. Unique Activities</h3>
 <div class="sub-programs">
@@ -195,79 +194,157 @@ Our core educational offerings are designed to celebrate heritage, encourage exc
 <img src="images/culturalworkshop.jpg">
 <div>
 <h4>Cultural Workshops</h4>
-<p>Offer workshops that explore African American history, art, and music.</p>
+<p>Offer workshops that explore African American history, art, and music. These can include storytelling sessions, art projects inspired by African American artists, and music classes featuring influential genres like jazz and blues.</p>
 </div>
 </div>
-
 <div class="sub-program">
 <img src="images/heritagecelebration.jpg">
 <div>
 <h4>Heritage Celebrations</h4>
-<p>Organize events celebrating cultural holidays and milestones.</p>
+<p>Organize events that celebrate significant cultural holidays and milestones, such as Black History Month, Juneteenth, and Kwanzaa. These events can include performances, guest speakers, and community gatherings.</p>
 </div>
 </div>
 </div>
 </div>
+
+<div class="program">
+<h3>2. Cultural Focus</h3>
+<div class="sub-programs">
+<div class="sub-program">
+<img src="images/curriculumintergration.jpg">
+<div>
+<h4>Curriculum Integration</h4>
+<p>Ensure that your curriculum includes African American literature, historical figures, and contributions to various fields. This can be woven into subjects like history, literature, and social studies.</p>
+</div>
+</div>
+<div class="sub-program">
+<img src="images/culturalexchange.jpg">
+<div>
+<h4>Cultural Exchanges</h4>
+<p>Facilitate exchanges with other cultural communities to promote understanding and appreciation of diverse heritages. This can include virtual pen pals or collaborative projects with other schools.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="program">
+<h3>3. Community Impact</h3>
+<div class="sub-programs">
+<div class="sub-program">
+<img src="images/communityservice.jpg">
+<div>
+<h4>Community Service Projects</h4>
+<p>Engage students in community service projects that benefit their local area while teaching them about civic responsibility and leadership.</p>
+</div>
+</div>
+<div class="sub-program">
+<img src="images/parentcommunityinvolvement.jpg">
+<div>
+<h4>Parent & Community Involvement</h4>
+<p>Encourage parents and community members to participate in school activities, such as volunteering, mentoring, or leading workshops, to strengthen community ties.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="program">
+<h3>4. Community Building & Connection</h3>
+<div class="sub-programs">
+<div class="sub-program">
+<img src="images/onlinecommunity.jpg">
+<div>
+<h4>Online Community Platform</h4>
+<p>Launch an online community platform where students, parents, and educators can connect, share resources, and support each other. This space can host discussions, share educational materials, and celebrate achievements.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 
 <hr>
 
-<!-- 2 -->
-<div class="program">
-<h3>2. Academic Enrichment</h3>
-<div class="sub-programs">
-<div class="sub-program">
-<img src="images/tutoring.jpg">
-<div>
-<h4>Tutoring Support</h4>
-<p>Provide subject-focused tutoring sessions to strengthen student skills.</p>
-</div>
+<!-- ================= HIGHLIGHTS ================= -->
+<section class="container section">
+<h2>HIGHLIGHTS</h2>
+<p class="section-intro">
+Current events, learning resources, and community voices.
+</p>
+
+<div class="highlights-grid">
+<div class="highlight-card">
+<img src="images/workshop.jpg">
+<h4>Upcoming Events</h4>
+<p>Workshops, field trips, and celebrations.</p>
 </div>
 
-<div class="sub-program">
-<img src="images/stem.jpg">
-<div>
-<h4>STEM Exploration</h4>
-<p>Hands-on science, technology, engineering, and math learning opportunities.</p>
+<div class="highlight-card">
+<h4>Educational Materials</h4>
+<ul>
+<li><a href="#">The Heritage Reader</a></li>
+<li><a href="#">Black History for Kids</a></li>
+<li><a href="#">Cultural Connections</a></li>
+</ul>
+</div>
+
+<div class="highlight-card">
+<h4>Testimonials</h4>
+<blockquote>“This collective helped my child build confidence.”</blockquote>
+<blockquote>“I feel connected to my culture.”</blockquote>
 </div>
 </div>
-</div>
-</div>
+</section>
 
 <hr>
 
-<!-- 3 -->
-<div class="program">
-<h3>3. Community & Leadership</h3>
-<div class="sub-programs">
-<div class="sub-program">
-<img src="images/mentorship.jpg">
-<div>
-<h4>Mentorship Programs</h4>
-<p>Connect students with mentors who inspire leadership and growth.</p>
+<!-- ================= CONTACT ================= -->
+<section class="container section">
+<h2>CONTACT US</h2>
+<p class="section-intro">
+Interested in joining or learning more?
+</p>
+<div style="text-align:center;">
+<a href="contact.html" class="cta">Get in Touch</a>
 </div>
-</div>
-
-<div class="sub-program">
-<img src="images/communityevents.jpg">
-<div>
-<h4>Community Events</h4>
-<p>Encourage connection and collaboration through family-centered gatherings.</p>
-</div>
-</div>
-</div>
-</div>
-
 </section>
 
 <footer>
 <p style="text-align:center;">&copy; 2026 Shenandoah Heritage Homeschool Collective</p>
 </footer>
+<style>
+@media (max-width: 768px) {
 
-<script>
-function toggleMenu() {
-  document.getElementById("navLinks").classList.toggle("show");
+  html, body {
+    overflow-x: hidden;
+  }
+
+  nav {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column !important;
+  }
+
+  .sub-programs,
+  .highlights-grid {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .sub-program {
+    flex-direction: column !important;
+    text-align: center;
+    align-items: center;
+  }
+
+  .sub-program img {
+    width: 100% !important;
+    max-width: 280px;
+    height: auto;
+  }
 }
-</script>
-
+</style>
 </body>
 </html>
+
